@@ -51,8 +51,7 @@ class _WeatherAppState extends State<WeatherApp> {
         errormessage = '';
       });
     } catch (error) {
-      errormessage =
-          "Sorry we didn't have data for that place";
+      errormessage = "Sorry we didn't have data for that place";
     }
   }
 
@@ -90,7 +89,7 @@ class _WeatherAppState extends State<WeatherApp> {
     }
   }
 
-  void onTextFieldSubmitted(String input) async  {
+  void onTextFieldSubmitted(String input) async {
     await fetchLocation();
     await fetchSearch(input);
     await fetchLocationDay();
@@ -142,13 +141,12 @@ class _WeatherAppState extends State<WeatherApp> {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            for(var i = 0; i<7; i++)
-                            forecastElement(
-                              i+1,
-                              abbrevationForecast[i],
-                              maxTempratureForecast[i],
-                              minTempratureForecast[i]
-                            )
+                            for (var i = 0; i < 7; i++)
+                              forecastElement(
+                                  i + 1,
+                                  abbrevationForecast[i],
+                                  maxTempratureForecast[i],
+                                  minTempratureForecast[i])
                           ],
                         ),
                       ),
@@ -161,12 +159,21 @@ class _WeatherAppState extends State<WeatherApp> {
                             onSubmitted: (String input) {
                               onTextFieldSubmitted(input);
                             },
-                            style: TextStyle(color: Colors.white, fontSize: 25),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                            ),
                             decoration: InputDecoration(
-                                hintText: 'Search another locatio...',
-                                hintStyle: TextStyle(
-                                    color: Colors.white, fontSize: 18),
-                                prefixIcon: Icon(Icons.search)),
+                                labelText: 'Search the location..',
+                                labelStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                ),
+                                prefixIcon: Icon(Icons.search),
+                                iconColor: Colors.white,
+                                border: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(50)))),
                           ),
                         ),
                         Padding(

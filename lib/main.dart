@@ -52,7 +52,7 @@ class _WeatherAppState extends State<WeatherApp> {
       });
     } catch (error) {
       errormessage =
-          "maaf kita tidak ada data untuk kota itu, coba kota yang lain";
+          "Sorry we didn't have data for that place";
     }
   }
 
